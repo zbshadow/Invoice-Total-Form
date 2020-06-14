@@ -55,7 +55,6 @@
             this.txtDiscountPercent.Size = new System.Drawing.Size(100, 20);
             this.txtDiscountPercent.TabIndex = 1;
             this.txtDiscountPercent.TabStop = false;
-            this.txtDiscountPercent.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
             // txtDiscountAmount
             // 
@@ -86,7 +85,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Discount Percent :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // label3
             // 
@@ -97,7 +95,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Discount Amount :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // btnCalculate
             // 
@@ -107,6 +104,7 @@
             this.btnCalculate.TabIndex = 2;
             this.btnCalculate.Text = "&Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.Click += new System.EventHandler(this.BtnCalculate_Click);
             // 
             // btnExit
             // 
@@ -117,6 +115,7 @@
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // label4
             // 
@@ -137,7 +136,7 @@
             this.txtTotal.TabIndex = 3;
             this.txtTotal.TabStop = false;
             // 
-            // Form1
+            // frmInvoiceTotal
             // 
             this.AcceptButton = this.btnCalculate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,10 +153,9 @@
             this.Controls.Add(this.txtDiscountAmount);
             this.Controls.Add(this.txtDiscountPercent);
             this.Controls.Add(this.txtSubtotal);
-            this.Name = "Form1";
+            this.Name = "frmInvoiceTotal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Invoice Total";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,24 +17,37 @@ namespace InvoiceTotal
             InitializeComponent();
         }
 
-        private void Label2_Click(object sender, EventArgs e)
+        private void BtnCalculate_Click(object sender, EventArgs e)
         {
+            decimal subtotal = Convert.ToDecimal(txtSubtotal.Text);
+            decimal discountPercent = 0m;
 
+            if (subtotal >= 500)
+            {
+                discountPercent = .2m;
+            }
+            else if (subtotal >= 250 && subtotal < 500)
+            {
+                discountPercent = 15m;
+            }
+            else if (subtotal >= 100 && subtotal < 250)
+            {
+                discountPercent = .1m;
+            }
+
+            decimal discountAmount = subtotal * discountPercent;
+            decimal invoiceTotal = subtotal - discountPercent;
+
+            txtDiscountPercent.Text = discountPercent.ToString("p1");
+            txtDiscountAmount.Text = discountAmount.ToString("c");
+            txtTotal.Text = invoiceTotal.ToString("c");
+
+            txtSubtotal.Focus();
         }
 
-        private void TextBox2_TextChanged(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }
