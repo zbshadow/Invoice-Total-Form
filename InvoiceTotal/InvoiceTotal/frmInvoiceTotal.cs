@@ -19,7 +19,8 @@ namespace InvoiceTotal
 
         private void BtnCalculate_Click(object sender, EventArgs e)
         {
-            decimal subtotal = Convert.ToDecimal(txtSubtotal.Text);
+            decimal subtotal = 0;
+            Decimal.TryParse(txtSubtotal.Text, out subtotal);
             decimal discountPercent = 0m;
 
             if (subtotal >= 500)
@@ -35,8 +36,8 @@ namespace InvoiceTotal
                 discountPercent = .1m;
             }
 
-            decimal discountAmount = subtotal * discountPercent;
-            decimal invoiceTotal = subtotal - discountPercent;
+            decimal discountAmount = Math.Round((subtotal * discountPercent), 2);
+            decimal invoiceTotal = Math.Round((subtotal - discountPercent), 2);
 
             txtDiscountPercent.Text = discountPercent.ToString("p1");
             txtDiscountAmount.Text = discountAmount.ToString("c");
